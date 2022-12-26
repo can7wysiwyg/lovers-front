@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 
-function UserApi(token) {
+function UserApi() {
     const [isLogged, setIsLogged] = useState(false)
+
+    let token = JSON.parse(JSON.stringify(localStorage.getItem('token')))
+    
+    
+
+
     
 
 

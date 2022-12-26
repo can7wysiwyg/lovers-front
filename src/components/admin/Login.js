@@ -3,6 +3,7 @@ import axios from "axios";
 
 function Login() {
   const [values, setValues] = useState({ email: "", password: "" });
+  
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -17,12 +18,17 @@ function Login() {
     
       const res =  await axios.post('https://music-back.onrender.com/auth/login', {...values})
 
+      
+      localStorage.setItem('token', res.data.accesstoken)
+
+
       if(res.data.msg) {
             
         alert(res.data.msg)
 
-    } else  {
-        localStorage.setItem('firstLogin', true)
+    } 
+    else  {
+        // localStorage.setItem('firstLogin', true)
         window.location.href = '/'
         
     }

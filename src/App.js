@@ -14,6 +14,7 @@ import SearchedItem from "./components/search/SearchedItem"
 import Header from "./components/nav/Header"
 import Home from "./components/home/Home"
 import SingleNewSong from "./components/main/SingleNewSong"
+import PageNotFound from "./components/main/PageNotFound"
 
 
 
@@ -42,6 +43,7 @@ function App() {
       <Route path="/searched_item/:id" element={<SearchedItem />} />
       <Route path="/single_new_song/:id" element={<SingleNewSong />} />
       <Route path="/create_new_song" element={ <CreateNewSong /> } />
+      <Route path="*" element={<PageNotFound />} />
      
      
 

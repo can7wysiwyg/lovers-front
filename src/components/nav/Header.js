@@ -21,19 +21,19 @@ const NavLink = React.forwardRef((props, ref) => {
 function Header() {
     const state = useContext(GlobalState)
   const [isLogged] = state.userApi.isLogged;
-  const [token] = state.token
 
+let token = JSON.parse(JSON.stringify(localStorage.getItem('token')))
+    
   const LogoutUser = async () => {
-    await axios.get("https://music-back.onrender.com/auth/logout", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
 
-    localStorage.removeItem("firstLogin");
-    localStorage.removeItem("cart")
+     localStorage.removeItem('token')
 
-    window.location.href = "/";
+     
+      window.location.href = "/";
+    
+    
+
+    
   };
 
   const loggedRouter = () => {
